@@ -1,0 +1,43 @@
+@import "tailwindcss";
+.urbanist {
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+*{
+  
+  box-sizing: border-box;
+  font-family: 'urbanist';
+}
+
+/* html{
+  font-size: 62.5%;
+} */
+
+body{
+  overflow-x: hidden;
+  font-family: "Urbanist", sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s ease-out forwards;
+}

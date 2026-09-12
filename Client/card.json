@@ -1,0 +1,181 @@
+[
+  {
+    "name": "Burger Palace",
+    "rating": 4.4,
+    "cuisines": ["Fast Food", "American"],
+    "priceForTwo": 600,
+    "deliveryTime": 30,
+    "images": [
+      "https://picsum.photos/300/200?1"
+    ],
+    "address": {
+      "city": "Mumbai",
+      "area": "Andheri",
+      "pincode": "400053"
+    },
+    "offer": "20% OFF",
+    "isOpen": true
+  },
+
+  {
+    "name": "Pizza Hub",
+    "rating": 4.7,
+    "cuisines": ["Italian", "Pizza"],
+    "priceForTwo": 800,
+    "deliveryTime": 25,
+    "images": [
+      "https://picsum.photos/300/200?2"
+    ],
+    "address": {
+      "city": "Pune",
+      "area": "Hinjewadi",
+      "pincode": "411057"
+    },
+    "offer": "Flat ₹150 OFF",
+    "isOpen": true
+  },
+
+  {
+    "name": "Biryani Express",
+    "rating": 4.5,
+    "cuisines": ["Biryani", "Mughlai"],
+    "priceForTwo": 700,
+    "deliveryTime": 35,
+    "images": [
+      "https://picsum.photos/300/200?3"
+    ],
+    "address": {
+      "city": "Hyderabad",
+      "area": "Banjara Hills",
+      "pincode": "500034"
+    },
+    "offer": "10% OFF",
+    "isOpen": true
+  },
+
+  {
+    "name": "Cafe Mocha",
+    "rating": 4.3,
+    "cuisines": ["Cafe", "Desserts"],
+    "priceForTwo": 900,
+    "deliveryTime": 20,
+    "images": [
+      "https://picsum.photos/300/200?4"
+    ],
+    "address": {
+      "city": "Bangalore",
+      "area": "Koramangala",
+      "pincode": "560034"
+    },
+    "offer": "Buy 1 Get 1",
+    "isOpen": true
+  },
+
+  {
+    "name": "Tandoori Nights",
+    "rating": 4.6,
+    "cuisines": ["North Indian"],
+    "priceForTwo": 1000,
+    "deliveryTime": 40,
+    "images": [
+      "https://picsum.photos/300/200?5"
+    ],
+    "address": {
+      "city": "Delhi",
+      "area": "Connaught Place",
+      "pincode": "110001"
+    },
+    "offer": "15% OFF",
+    "isOpen": true
+  },
+
+  {
+    "name": "South Spice",
+    "rating": 4.2,
+    "cuisines": ["South Indian"],
+    "priceForTwo": 500,
+    "deliveryTime": 28,
+    "images": [
+      "https://picsum.photos/300/200?6"
+    ],
+    "address": {
+      "city": "Chennai",
+      "area": "T Nagar",
+      "pincode": "600017"
+    },
+    "offer": "Free Delivery",
+    "isOpen": true
+  },
+
+  {
+    "name": "Chinese Wok",
+    "rating": 4.1,
+    "cuisines": ["Chinese"],
+    "priceForTwo": 650,
+    "deliveryTime": 32,
+    "images": [
+      "https://picsum.photos/300/200?7"
+    ],
+    "address": {
+      "city": "Kolkata",
+      "area": "Salt Lake",
+      "pincode": "700091"
+    },
+    "offer": "₹100 OFF",
+    "isOpen": false
+  },
+
+  {
+    "name": "Sushi World",
+    "rating": 4.8,
+    "cuisines": ["Japanese", "Seafood"],
+    "priceForTwo": 1800,
+    "deliveryTime": 45,
+    "images": [
+      "https://picsum.photos/300/200?8"
+    ],
+    "address": {
+      "city": "Mumbai",
+      "area": "Bandra",
+      "pincode": "400050"
+    },
+    "offer": "25% OFF",
+    "isOpen": true
+  },
+
+  {
+    "name": "The Veggie Bowl",
+    "rating": 4.5,
+    "cuisines": ["Healthy Food", "Salads"],
+    "priceForTwo": 750,
+    "deliveryTime": 22,
+    "images": [
+      "https://picsum.photos/300/200?9"
+    ],
+    "address": {
+      "city": "Pune",
+      "area": "Kothrud",
+      "pincode": "411038"
+    },
+    "offer": "Flat ₹75 OFF",
+    "isOpen": true
+  },
+
+  {
+    "name": "Dessert Heaven",
+    "rating": 4.9,
+    "cuisines": ["Desserts", "Bakery"],
+    "priceForTwo": 550,
+    "deliveryTime": 18,
+    "images": [
+      "https://picsum.photos/300/200?10"
+    ],
+    "address": {
+      "city": "Ahmedabad",
+      "area": "Satellite",
+      "pincode": "380015"
+    },
+    "offer": "30% OFF",
+    "isOpen": true
+  }
+]

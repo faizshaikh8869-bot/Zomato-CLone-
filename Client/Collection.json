@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "restaurantName": "Burger Palace",
+        "numberOfPlaces": 15,
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd"
+    },
+    {
+        "id": 2,
+        "restaurantName": "Pizza Hub",
+        "numberOfPlaces": 8,
+        "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591"
+    },
+    {
+        "id": 3,
+        "restaurantName": "Biryani House",
+        "numberOfPlaces": 22,
+        "image": "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a"
+    },
+    {
+        "id": 4,
+        "restaurantName": "Cafe Coffee Spot",
+        "numberOfPlaces": 10,
+        "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+    },
+    {
+        "id": 5,
+        "restaurantName": "Tandoori Junction",
+        "numberOfPlaces": 18,
+        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1"
+    },
+    {
+        "id": 6,
+        "restaurantName": "Royal Kebab Corner",
+        "numberOfPlaces": 12,
+        "image": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd"
+    }
+]
