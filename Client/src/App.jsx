@@ -1,17 +1,27 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
 import './App.css'
-import MainLanding from './Pages/RestrauntPages/MainTomatoPage'
+import MainLanding from './Pages/MainTomatoPage'
 import Home from './Pages/LandingPages/LandingPage'
 import { Link, Route, Routes } from 'react-router-dom'
-import IndiaLocationPage from './Pages/LocationPages/LocationPage'
+import IndiaLocationPage from './Pages/LocationPage'
 import Login from './Components/Login'
 import Signup from './Components/Signup'
-import Filter from './Components/Restraunts/Filters/Filter'
-import Card from './Components/Restraunts/Card/Card'
-import CollectionCardsMap from './Components/Restraunts/Collection/CollectionCardsMap'
+// import Filter from './Components/Restraunts/Filters/Filter'
+import Card from './Components/Card'
+import CollectionCardsMap from './Components/CollectionCardsMap'
+import Lenis from 'lenis'
 
 
 function App() {
+  // Initialize Lenis
+  const lenis = new Lenis({
+    autoRaf: true,
+  });
+
+  // Listen for the scroll event and log the event data
+  // lenis.on('scroll', (e) => {
+   
+  // });
 
   return (
     <>
@@ -19,7 +29,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/india' element={<IndiaLocationPage />} />
         <Route path='/main/:city' element={<MainLanding />} />
-        <Route path='/:collectionName' element={<CollectionCardsMap/>}/>
+        <Route path='/:collectionName' element={<CollectionCardsMap />} />
         <Route path='/india/login' element={<Login />} />
         <Route path='/india/signup' element={<Signup />} />
         <Route path='/example' element={<Card />} />

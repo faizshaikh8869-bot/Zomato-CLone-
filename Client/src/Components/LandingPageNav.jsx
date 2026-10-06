@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import video from "../../assets/Video-of-zomato.mp4"
+import video from "../assets/Video-of-zomato.mp4"
 import { ChevronsDown } from "lucide-react";
-import MainPage from "./MainPage";
+import MainPage from "../Pages/MainPage";
 
 function Navbar() {
 
-  const [scroll ,setScroll] =useState(false);
+  const [scroll, setScroll] = useState(false);
 
   return (
     <section className="relative h-screen overflow-hidden flex justify-center items-end">
@@ -22,7 +22,7 @@ function Navbar() {
       </video>
 
       {/* Dark Overlay */}
-      
+
 
       {/* Content */}
       <div className="relative flex flex-col text-white w-full max-w-140 md:h-100">

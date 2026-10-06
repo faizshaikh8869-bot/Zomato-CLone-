@@ -22,7 +22,7 @@ export function CollectionsProvider({ Childern }) {
 
     return (
         <>
-            <CollectionsProvider value={Collection, loading}>
+            <CollectionsProvider value={{Collection, loading}}>
                 {Childern}
             </CollectionsProvider>
         </>

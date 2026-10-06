@@ -18,7 +18,7 @@ function CollectionCard({ name, places, image, id }) {
       <img
         src={image}
         alt={name}
-        loading="lazy"
+        // loading="lazy"
         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
       />
 
@@ -39,4 +39,5 @@ function CollectionCard({ name, places, image, id }) {
   );
 }
 
-export default React.memo(CollectionCard);
+// export default React.memo(CollectionCard);
+export default CollectionCard

@@ -1,7 +1,7 @@
 import React from 'react'
-import LandingPageNav from './LandingPageNav'
-import MainPage from './MainPage'
-import Footer from '../Footer'
+import LandingPageNav from '../../Components/LandingPageNav'
+import MainPage from '../MainPage'
+import Footer from '../../Components/Footer'
 
 function Home() {
   return (

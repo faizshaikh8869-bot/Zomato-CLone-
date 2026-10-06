@@ -1,5 +1,5 @@
 import React from 'react'
-import jsonData from '../../../../card.json'
+import jsonData from '../../card.json'
 import { StarsIcon } from 'lucide-react'
 import { useState } from 'react';
 import CardMap from './CardMap';

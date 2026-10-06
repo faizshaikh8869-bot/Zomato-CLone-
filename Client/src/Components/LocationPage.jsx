@@ -1,8 +1,7 @@
 import React from 'react'
 import bgImage from '../assets/IndiaPageBg-Img.avif'
 import logo from '../assets/zomato-logo-white.jpg'
-import LocationCard from '../Components/LocationCard'
-import MainLanding from '../Pages/RestrauntPages/MainTomatoPage';
+import LocationCard from './LocationCard'
 import { Link, useNavigate } from 'react-router-dom';
 
 function LocationPage() {

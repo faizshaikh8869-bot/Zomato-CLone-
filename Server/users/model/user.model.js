@@ -1,4 +1,4 @@
-const mongoose =require('mongoose');
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
     fullName:{
@@ -25,7 +25,8 @@ const userSchema = new mongoose.Schema({
         minlength:[6 , 'Password must be at least 8 characters long']
     },
     profilePic:{
-        type:String
+        type:String,
+        default: 'https://png.pngtree.com/png-vector/20230131/ourmid/pngtree-flat-style-user-profile-icon-on-isolated-background-vector-png-image_49602770.jpg'
     },
 });
 

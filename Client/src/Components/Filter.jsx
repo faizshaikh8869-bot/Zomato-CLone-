@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import MyModel from "./showFilterModel";
-import adjustment from '../../../assets/RestrauntImages/contrastAdjustment.png'
+import adjustment from '../assets/RestrauntImages/contrastAdjustment.png'
 import { icons } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 

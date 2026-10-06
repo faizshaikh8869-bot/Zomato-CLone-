@@ -22,7 +22,7 @@ function UserProvider({ Children }) {
     //Set user function will send and every update will first make the prev updates as destructured array
     return (
         <>
-            <UserProvider value={user , setUser} >
+            <UserProvider value={{user , setUser}} >
                 {Children}
             </UserProvider>
         </>

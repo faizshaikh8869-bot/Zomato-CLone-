@@ -1,17 +1,15 @@
-const express =require('express');
-require('dotenv').config();
-const cookiesParser =require('cookie-parser');
-const cors =require('cors');
-
-const userRouter =require('./routes/user.routes.js');
-const connectDB =require('./config/Connect.js');
-require('dotenv').config();
+import express from 'express';
+import 'dotenv/config';
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import userRouter from './routes/user.routes.js';
+import connectDB from './config/Connect.js';
 
 const app =express();
 
 connectDB();
 
-app.use(cookiesParser());
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors({

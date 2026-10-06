@@ -1,8 +1,8 @@
 import React from 'react'
-import secondPageLayout from '../../assets/MainPage/second-page-layout.avif'
-import elememt1 from '../../assets/MainPage/second-page-el-2.avif'
-import element2 from '../../assets/MainPage/second-page-el-1.avif'
-import element3 from '../../assets/MainPage/second-page-el-3.avif'
+import secondPageLayout from '../assets/MainPage/second-page-layout.avif'
+import elememt1 from '../assets/MainPage/second-page-el-2.avif'
+import element2 from '../assets/MainPage/second-page-el-1.avif'
+import element3 from '../assets/MainPage/second-page-el-3.avif'
 import { motion } from "framer-motion";
 import { Store, MapPinPlus, ArrowRightCircleIcon, AlignRightIcon } from 'lucide-react';
 import { Navigate, useNavigate } from 'react-router-dom'

@@ -1,6 +1,6 @@
 import React from 'react'
-import LocationPage from '../../Components/LocationPage'
-import CenterContainer from '../../Components/CenterContainer'
+import LocationPage from '../Components/LocationPage'
+import CenterContainer from '../utils/CenterContainer'
 
 
 function IndiaLocationPage() {
