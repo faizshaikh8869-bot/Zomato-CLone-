@@ -7,5 +7,6 @@ export const config = {
     ACCES_TOKEN_EXPIRY: process.env.ACCES_TOKEN_EXPIRY,
 
     MONGODB_URI:process.env.MONGODB_URI,
+    PORT: process.env.PORT || 4000,
 
 }

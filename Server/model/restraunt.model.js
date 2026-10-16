@@ -62,7 +62,11 @@ const restraunt = new mongoose.Schema({
 
 }, {
     timeseries: true,
-    autoIndex: false // By default, Mongoose automatically calls createIndex for every index defined in your schema when the application starts up. While convenient for development, you should disable this behavior in production because building indexes on a large database can cause significant performance degradation
+    autoIndex: false 
+// By default, Mongoose automatically calls createIndex for every index defined
+//  in your schema when the application starts up. While convenient for development,
+//  you should disable this behavior in production because building indexes on a 
+// large database can cause significant performance degradation
 })
 
 /**
