@@ -2,7 +2,6 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import userRouter from './routes/user.routes.js';
-import connectDB from './config/Connect.js';
 import mongoose from 'mongoose';
 
 const app = express();
@@ -40,10 +39,6 @@ app.get('/health', (_req, res)=>{
 
 app.use('/user', userRouter);
 
-app.listen(port, ()=>{
-    console.log('Server started at '+`${port}`);
-});
 
 
-
-module.exports = app;
+export default app;

@@ -1,44 +1,53 @@
-import mongoose from "mongoose";
-import Food  from "./Foods.model";
+import mongoose, { Mongoose } from "mongoose";
+import Food from "./Foods.model";
+import user from "./user.model";
 
-//I am coming to write the db before building a project :- Library Management System
-const restraunt = new mongoose.Schema({
-    // restaurantName:String,
-    // numberOfPlaces:Number,
-    // image:String,
-    // places:{
-    //     type:Object,
 
-    // }    
+const reviewSchema = new mongoose.Schema({
+    username: {
+        type: mongoose.Schema.Types.ObjectId, // for population of name
+        ref: 'User',
+        required: true
+    },
+    stars: {
+        type: Number,
+        min: 0,
+        max: 5,
+        default: 0,
+    },
+    comment: {
+        type: String,
+        default: ''
+    }
+});
+
+const menueSchema = new Mongoose.Schema({
+    name: { type: String, required: true },
+    price: { type: Number, required: true },
+    image: { type: String }
+})
+
+
+const restrauntSchema = new mongoose.Schema({
+    Restraunt_Owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+    },
 
     name: {
         type: String,
-        required:true.valueOf,
+        required: true.valueOf,
     },
 
-    email:{
+    email: {
         type: String,
-        required:true,
+        required: true,
     },
 
     address: {
         type: String,
-        required:true.valueOf,
-    },
-
-    Restraunt_Image: {
-        type: String
-    },
-
-    city: {
-        type: String,
-        required:true,
-        index: true
-    },
-
-    location: {
-        type: { type: String, default: 'Point' },
-        coordinates: [Number],
+        required: true.valueOf,
     },
 
     phoneNumber: {
@@ -46,28 +55,39 @@ const restraunt = new mongoose.Schema({
         required: true,
     },
 
-    food: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Food',
-        require: true
-    }],
+    Restraunt_Image: {
+        type: String
+    },
 
-    speciality:{
-        type:String,
-    }, 
+    location: {
+        type: {
+            type: String,
+            enum: ['Point'],
+            required: true,
+            default: 'Point'
+        },
+        coordinates: {
+            type: [Number], // [longitude, latitude]
+            required: true
+        }
+    },
 
-    menue:[{
-        type:String,
-    }],
+    Speciality: { type: String },
+
+    menue: { menueSchema },
+    reviews: [reviewSchema]
 
 }, {
     timeseries: true,
-    autoIndex: false 
-// By default, Mongoose automatically calls createIndex for every index defined
-//  in your schema when the application starts up. While convenient for development,
-//  you should disable this behavior in production because building indexes on a 
-// large database can cause significant performance degradation
+    autoIndex: false
+    // By default, Mongoose automatically calls createIndex for every index defined
+    //  in your schema when the application starts up. While convenient for development,
+    //  you should disable this behavior in production because building indexes on a 
+    // large database can cause significant performance degradation
 })
+
+const Restraunt = mongoose.model('Restraunt', restrauntSchema);
+export default Restraunt;
 
 /**
  * // Disabling at the schema level

@@ -1,16 +1,11 @@
 import mongoose from "mongoose";
+import { ROLE } from "../utils/constants.js";
 
 const userSchema = new mongoose.Schema({
-    fullName:{
-        firstName:{ 
-            type:String ,
-            required:true,
-            minlength:[3 , 'First name must be at least 3 characters long']
-        },
-        lastName:{ 
-            type:String,
-            minlength:[3 , 'last name must be at least 3 characters long']
-        },
+    name:{
+        type:String,
+        minlength:4,
+        required:true
     },
     email:{ 
         type:String,
@@ -24,12 +19,17 @@ const userSchema = new mongoose.Schema({
         required:true,
         minlength:[6 , 'Password must be at least 8 characters long']
     },
-    profilePic:{
+    // profilePic:{
+    //     type:String,
+    //     default: 'https://png.pngtree.com/png-vector/20230131/ourmid/pngtree-flat-style-user-profile-icon-on-isolated-background-vector-png-image_49602770.jpg'
+    // },
+    role:{
         type:String,
-        default: 'https://png.pngtree.com/png-vector/20230131/ourmid/pngtree-flat-style-user-profile-icon-on-isolated-background-vector-png-image_49602770.jpg'
-    },
+        enum:[ROLE],
+        default:ROLE.USER
+    }
 });
 
-const user = mongoose.model('user' , userSchema);
+const User = mongoose.model('User' , userSchema);
 
-module.exports =user;
+export default user;

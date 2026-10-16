@@ -1,6 +1,7 @@
-const users = require('../model/user.model.js');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+import users from '../model/user.model.js';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import { config } from '../config/configs.js';
 
 //Genrate jswt token ----> store in localhost
 //Gerrate refresh token ----> store in cookies
@@ -36,8 +37,8 @@ async function registerUser(req, res) {
         });
         await user.save();
 
-        const accesToken = jwt.sign({ _id: user._id }, process.env.secret_key, { expiresIn: '15min' });
-        const refreshToken = jwt.sign({ _id: user._id }, process.env.secret_key, { expiresIn: '2days' });
+        const accesToken = jwt.sign({ _id: user._id }, config.SECRET_KEY, { expiresIn: config.ACCES_TOKEN_EXPIRY });
+        const refreshToken = jwt.sign({ _id: user._id }, config.SECRET_KEY, { expiresIn: config.REFRESH_TOKEN_EXPIRY });
 
         res.cookie('refreshToken', refreshToken, {
             httpOnly: true,
@@ -174,7 +175,7 @@ async function getUserProfile(req, res) {
     }
 }
 
-module.exports = {
+export  {
     registerUser,
     loginUser,
     makeRefreshToken,
