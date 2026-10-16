@@ -1,11 +1,18 @@
 
 
-function registerRestraunt(req, res) {
+async function handleRestrauntRegister(req, res) {
     
 };
 
 
 
 export {
-    registerRestraunt
+    handleRestrauntRegister,
+    handleAddItemsInMenue,
+    handleChangesInSettings,
+    handlePostComment,
+    
+    handleTableBooking,
+    handdleGetAllRestraunts,
+    handleServingRestrauntInfo
 }
