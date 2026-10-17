@@ -26,10 +26,11 @@ function App() {
           <Route path='/' element={ <HomePage />} />
           <Route path='/Location' element={ <ChooseLocationPage /> } />
           <Route path='/main/:city' element={<MainRestrauntPage />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Signup />} />
+          
+          <Route path='/auth/login' element={<Login />} />
+          <Route path='/auth/signup' element={<Signup />} />
+          
           <Route path='/:collectionName' element={<CollectionCardsMap />} />
-          <Route path='/example' element={<Card />} />
 
         </Routes>
     </>

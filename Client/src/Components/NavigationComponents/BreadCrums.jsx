@@ -16,13 +16,13 @@ function BreadCrums() {
 
                 <ChevronRight size={16} />
 
-                <Link to="/india" className="hover:text-rose-400">
+                <Link to="/Location" className="hover:text-rose-400">
                     India
                 </Link>
 
                 <ChevronRight size={16} />
 
-                <Link to={`/main/${city}`} className="hover:text-rose-400">
+                <Link to={`/Location/${city}`} className="hover:text-rose-400">
                     {city}
                 </Link>
             </div>

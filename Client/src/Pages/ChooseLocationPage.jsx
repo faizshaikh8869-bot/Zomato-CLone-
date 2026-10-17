@@ -1,7 +1,6 @@
 
 
 import bgImage from '../assets/IndiaPageBg-Img.avif'
-import logo from '../assets/zomato-logo-white.jpg'
 import Footer from '../Components/Footer';
 import LocationCard from '../Components/LocationPageCards'
 import { Link, useNavigate } from 'react-router-dom';
@@ -32,13 +31,13 @@ function ChooseLocationPage() {
                             <ul className="flex gap-8 text-white text-xl cursor-pointer">
                                 <li><a href="#" >Add restaurant</a></li>
                                 <li>
-                                    <Link to="/login" className="cursor-pointer">
+                                    <Link to="/auth/login" className="cursor-pointer">
                                         Login
                                     </Link>
                                 </li>
 
                                 <li>
-                                    <Link to="/signup" className="cursor-pointer">
+                                    <Link to="/auth/signup" className="cursor-pointer">
                                         Sign up
                                     </Link>
                                 </li>
