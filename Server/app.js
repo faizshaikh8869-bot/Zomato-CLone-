@@ -25,9 +25,10 @@ app.get('/health', (_req, res)=>{
         return res.status(503).json({})
     }
 
+    const time = Date.now();
     const helthStatusInfo = {
         status: SystemStatus,
-        timestamp: new Date.now(),
+        timestamp: time,
         services:{
             mongoDB: DBConnection,
         }

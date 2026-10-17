@@ -8,8 +8,7 @@ import {
     logoutUser, 
     getUserProfile 
 } from '../controllers/user.controller.js';
-import { AuthMiddleWare, CheeckRole } from '../Middleware/user.js';
-import { ROLE } from '../utils/constants.js';
+import { AuthMiddleWare } from '../Middleware/user.js';
 
 
 //Signin routes
@@ -17,7 +16,7 @@ routes.post('/register', registerUser);
 routes.post('/refresh', makeRefreshToken);
 
 routes.post('/login', loginUser);
-routes.get('/profile',AuthMiddleWare, CheeckRole , getUserProfile);
+routes.get('/profile', AuthMiddleWare, getUserProfile);
 
 routes.get('/logout', logoutUser);
 

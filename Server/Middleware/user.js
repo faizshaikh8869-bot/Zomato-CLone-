@@ -1,8 +1,8 @@
 import { config } from "../config/configs.js";
-import { ROLE } from "../utils/constants.js";
+import jwt from "jsonwebtoken";
 
 
-async function AuthMiddleWare(req, res) {
+async function AuthMiddleWare(req, res, next) {
     // Check the user tokerns 
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
@@ -18,7 +18,7 @@ async function AuthMiddleWare(req, res) {
     }
 }
 
-async function CheeckRole(...alowedRoles) {
+function CheeckRole(...alowedRoles) {
     return (req, res, next) => {
         if (!req.user || !req.user.role) {
             return res.status(401).json({

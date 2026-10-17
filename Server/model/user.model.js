@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema({
     name:{
         type:String,
         minlength:4,
+        trim:true,
         required:true
     },
     email:{ 
@@ -32,4 +33,4 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User' , userSchema);
 
-export default user;
+export default User;

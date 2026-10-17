@@ -9,9 +9,9 @@ import { config } from '../config/configs.js';
 
 //Signup route
 async function registerUser(req, res) {
-    const { firstName, lastName, email, password } = req.body;
+    const { name, email, password } = req.body;
 
-    if (!firstName || !email || !password) {
+    if (!name || !email || !password) {
         return res.status(400).json({
             message: "Please enter all the fields",
         });
@@ -26,30 +26,34 @@ async function registerUser(req, res) {
                 message: "User already exist",
             });
         }
+
         const hashPassword = await bcrypt.hash(password, 10);
         const user = new users({
-            fullName: {
-                firstName,
-                lastName
-            },
+            name,
             email,
             password: hashPassword
         });
         await user.save();
 
-        const accesToken = jwt.sign({ _id: user._id }, config.SECRET_KEY, { expiresIn: config.ACCES_TOKEN_EXPIRY });
+        const accessToken = jwt.sign({ _id: user._id, role: user.role }, config.SECRET_KEY, { expiresIn: config.ACCES_TOKEN_EXPIRY || '15min' });
         const refreshToken = jwt.sign({ _id: user._id }, config.SECRET_KEY, { expiresIn: config.REFRESH_TOKEN_EXPIRY });
 
         res.cookie('refreshToken', refreshToken, {
             httpOnly: true,
         });
+        
         res.status(201).json({
-            message: "User crested",
-            accesToken: accesToken,
+            message: "User created",
+            accessToken,
+            user: {
+                name: user.name,
+                email: user.email,
+                profilePic: user.profilePic || "",
+            },
         });
     } catch (error) {
-
         console.error('Error registering user:', error);
+        return res.status(500).json({ message: "Registration failed" });
     }
 };
 
@@ -110,19 +114,25 @@ async function loginUser(req, res) {
             });
         }
 
-        const accesToken = jwt.sign({ _id: user._id }, process.env.secret_key, { expiresIn: '15min' });
-        const refreshToken = jwt.sign({ _id: user._id }, process.env.secret_key, { expiresIn: '2days' });
+        const accessToken = jwt.sign({ _id: user._id, role: user.role }, config.SECRET_KEY, { expiresIn: config.ACCES_TOKEN_EXPIRY || '15min' });
+        const refreshToken = jwt.sign({ _id: user._id }, config.SECRET_KEY, { expiresIn: config.REFRESH_TOKEN_EXPIRY || '2days' });
 
         res.cookie('refreshToken', refreshToken, {
             httpOnly: true,
         });
 
-        res.status(301).json({
+        res.status(200).json({
             message: "Login successful",
-            accesToken: accesToken,
+            accessToken,
+            user: {
+                name: user.name,
+                email: user.email,
+                profilePic: user.profilePic || "",
+            },
         });
     } catch (error) {
         console.error('Error logging in user:', error);
+        return res.status(500).json({ message: "Login failed" });
     }
 }
 
@@ -151,27 +161,15 @@ async function logoutUser(req, res) {
 async function getUserProfile(req, res) {
     try {
         
-        const token = req.cookies.refreshToken;
-
-        if (!token) {
-            return res.status(401).json({
-                message: "No token found"
-            });
-        }
-        const decode =  jwt.verify(token, process.env.secret_key);
-        const user = await users.findOne({_id:decode._id}).select("-password -__v");
+        const user = await users.findById(req.user._id).select("-password -__v");
         if (!user) {
-            return res.json({
-                message: "User not found",
-            });
+            return res.status(404).json({ message: "User not found" });
         };
 
-        res.json({
-            user:user,
-        })
+        return res.json({ user });
     } catch (err) {
-
-        console.error('The profile err :-' + err);
+        console.error('Error fetching user profile:', err);
+        return res.status(500).json({ message: "Could not load user profile" });
     }
 }
 
