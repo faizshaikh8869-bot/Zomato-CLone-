@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MapPin, Search, ChevronDown, LogIn } from "lucide-react";
-import logo from '../../../assets/zomato-logo-white.jpg'
+import logo from '../../assets/zomato-logo-white.jpg'
 import { Link, useNavigate, useNavigation, useParams } from "react-router-dom";
 
 function TopNavmain() {

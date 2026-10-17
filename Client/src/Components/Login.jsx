@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import image from "../assets/IndiaPageBg-Img.avif";
 
@@ -29,10 +28,11 @@ function Login() {
   const handleSubmit = async () => {
     try {
       const response = axios.post("http://localhost:4000/user/register", formData)
-
+      
+      localStorage.setItem(response.token);
       console.log("Success:");
       
-      navigate("/india");
+      navigate("/Location");
     } catch (err) {
       console.log("Error:", err.response?.data || err.message);
     }
@@ -99,7 +99,7 @@ function Login() {
 
           {/* BUTTON */}
           <button
-            onClick={handleSubmit}
+            onClick={()=>{handleSubmit}}
             className="border mt-8 px-6 py-2 rounded-xl bg-black text-white hover:scale-105 transition"
           >
             Submit
@@ -111,7 +111,7 @@ function Login() {
 
             <button
               className="text-blue-500"
-              onClick={() => navigate("/india/signup")}
+              onClick={() => navigate("/signup")}
             >
               Sign up
             </button>

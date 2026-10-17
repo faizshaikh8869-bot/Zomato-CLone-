@@ -29,13 +29,13 @@ function LocationPage() {
               <ul className="flex gap-8 text-white text-xl cursor-pointer">
                 <li><a href="#" >Add restaurant</a></li>
                 <li>
-                  <Link to="/india/login" className="cursor-pointer">
+                  <Link to="/login" className="cursor-pointer">
                     Login
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/india/signup" className="cursor-pointer">
+                  <Link to="/signup" className="cursor-pointer">
                     Sign up
                   </Link>
                 </li>

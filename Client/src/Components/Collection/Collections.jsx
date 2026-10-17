@@ -2,8 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 import CollectionCard from './CollectionCard'
-import axios from 'axios'
-import collectionData from '../../Collection.json'
+import collectionData from '../../../Collection.json'
 
 function Collections() {
   const { city } = useParams()

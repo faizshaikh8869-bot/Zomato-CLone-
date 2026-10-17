@@ -7,7 +7,7 @@ import BreadCrums from "../Components/NavigationComponents/BreadCrums";
 import ThreeBUTTONS from "../Components/NavigationComponents/ThreeBUTTONS";
 
 
-function MainNav() {
+function NavigationComp() {
     const { city } = useParams();
     const [location, setLocation] = useState({ city });
     const [inpt, setInpt] = useState('');
@@ -30,4 +30,4 @@ function MainNav() {
     );
 }
 
-export default MainNav;
+export default NavigationComp;

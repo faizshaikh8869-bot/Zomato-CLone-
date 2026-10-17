@@ -1,5 +1,5 @@
 import React from 'react'
-import jsonData from '../../card.json'
+import jsonData from '../../../card.json'
 import { StarsIcon } from 'lucide-react'
 import { useState } from 'react';
 import CardMap from './CardMap';
@@ -26,13 +26,13 @@ function Card() {
   function handleFileSubmit(e) {
     setFile(e.target.file[0]);
   };
-    
+
   async function handleFormSubmit(e) {
 
     e.preventDefault();
-   if(!file){
-    alert("Plese enter a file ");
-  }
+    if (!file) {
+      alert("Plese enter a file ");
+    }
     const form = new FormData();
     form.append('cardImage', file);
 
@@ -50,7 +50,7 @@ function Card() {
     }
 
   }
-  
+
   return (
     <>
       {/* <div className='border-2 h-50 w-full flex justify-center items-center'>
@@ -59,13 +59,13 @@ function Card() {
           <button type='submit'>Submit</button>
         </form>
       </div>  This will be added when the restraunt_Owner will be added */}
-      
-     
+
+
       <section className="flex flex-wrap gap-6 justify-center ">
         {Data.map((restaurant, index) => (
           <CardMap key={index} id={index} restaurant={restaurant} />
         ))}
-       </section>
+      </section>
     </>
   )
 }

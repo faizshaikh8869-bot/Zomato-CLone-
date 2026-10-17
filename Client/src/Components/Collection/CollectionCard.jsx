@@ -16,7 +16,7 @@ function CollectionCard({ name, places, image, id }) {
     >
       {/* Image */}
       <img
-        src={image}
+        // src={image}
         alt={name}
         // loading="lazy"
         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"

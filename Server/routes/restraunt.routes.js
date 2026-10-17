@@ -2,6 +2,18 @@ import { Router } from "express";
 import { AuthMiddleWare, CheeckRole } from "../Middleware/user";
 import { ROLE } from "../utils/constants";
 const restrauntRoute = Router();
+import {
+    handdleGetAllRestraunts, 
+    handleAddItemsInMenue, 
+    handleChangesInSettings,
+
+    handlePostComment,
+    handleTableBooking,
+    handleServingRestrauntInfo,
+
+    handleRestrauntRegister
+    
+} from '../controllers/restraunt.Controller.js'
 
 
 // Owner

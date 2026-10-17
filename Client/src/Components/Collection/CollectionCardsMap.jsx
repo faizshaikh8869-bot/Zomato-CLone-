@@ -1,9 +1,9 @@
 import React from 'react'
-import restaurant from '../../Collection.json'
+import restaurant from '../../../Collection.json'
 import Card from './Card'
 import CollectionCard from './CollectionCard'
-import Footer from './Footer'
-import Nav from './Restraunts/NavigationComponents/MainNav'
+import Footer from '../Footer'
+import Nav from '../NavigationComponents/MainNav'
 
 function CollectionCardsMap() {
   const restaurants = restaurant
@@ -22,7 +22,7 @@ function CollectionCardsMap() {
             <CollectionCard
               key={restaurant.id}
               id={restaurant.id}
-              image={restaurant.image}
+              // image={restaurant.image}
               name={restaurant.restaurantName}
               places={restaurant.numberOfPlaces}
             />
